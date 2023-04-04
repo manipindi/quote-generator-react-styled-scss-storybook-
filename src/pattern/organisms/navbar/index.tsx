@@ -14,6 +14,7 @@ export default function Navbar() {
   const { data: authorResponse }: any = useAxios(`/authors?page=${page}`);
   const authorParam = searchParams.get("author")  
   
+  
   return (
     <NavContainer>
       <Filter placeHolder="Author" selectedParam={authorParam} options = {authorResponse?.results}/>
