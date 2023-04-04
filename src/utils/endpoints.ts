@@ -1,0 +1,1 @@
+export const QUOTES_DOMAIN =  "https://api.quotable.io"
