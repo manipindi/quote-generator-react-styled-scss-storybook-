@@ -2,6 +2,7 @@
   "name": "quote-generator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://manipindi.github.io/quote-generator-react-styled-scss-storybook-",
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
     "@emotion/react": "^11.10.6",
