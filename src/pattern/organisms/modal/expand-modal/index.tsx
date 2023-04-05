@@ -6,7 +6,7 @@ export default function ExpandModal({children, isOpen, closeHanlder}:any) {
     <Modal isCentered closeOnOverlayClick={false} isOpen={isOpen} onClose={closeHanlder}>
         <ModalOverlay />
         <ModalContent w={"auto"}>
-          <ModalCloseButton position="absolute" right={"-80px"} top="-30px"/>
+          <ModalCloseButton color={"#fff"} position="absolute" right={"-80px"} top="-30px"/>
           <ModalBody padding={0}>
            {children}
           </ModalBody>
