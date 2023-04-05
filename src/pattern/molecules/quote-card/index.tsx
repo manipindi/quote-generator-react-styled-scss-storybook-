@@ -1,7 +1,7 @@
 import { Text } from "@chakra-ui/react";
 import styled, { css } from "styled-components";
 import QuoteImage from "../../../assets/quote.png";
-import { Button } from "../../atoms/button";
+import './quote-card.scss'
 
 const QuoteCardOverlay = styled.div`
   position: absolute;
@@ -82,9 +82,9 @@ export const QuoteCard = ({ quoteData, expandHandler, isModal }: any) => {
         </>
       )}
       {!isModal && (
-        <QuoteCardOverlay>
-          <Button onClick={expandEvtHandler}>Expand</Button>
-        </QuoteCardOverlay>
+        <div className="quote-overlay">
+          <button className="card-button" onClick={expandEvtHandler}><span>Expand</span></button>
+        </div>
       )}
     </QuoteCardContainer>
   );

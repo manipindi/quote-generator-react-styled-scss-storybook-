@@ -4,7 +4,6 @@ import { Quotes } from './pattern/containers/quotes-container';
 import Navbar from './pattern/organisms/navbar';
 
 function App() {
-
   return (
     <Layout>
       <Navbar/>
