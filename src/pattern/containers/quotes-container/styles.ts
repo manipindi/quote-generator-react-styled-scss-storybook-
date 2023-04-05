@@ -11,6 +11,8 @@ export const StyledReactPaginate = styled(ReactPaginate)`
   border-radius: 8px;
   position: fixed;
   bottom: 20px;
+  left: 50%;
+transform: translateX(-50%);
   li {
     padding: 10px 20px;
     border: 0.4px solid gray;

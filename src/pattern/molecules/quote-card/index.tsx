@@ -1,7 +1,7 @@
 import { Text } from "@chakra-ui/react";
 import styled, { css } from "styled-components";
 import QuoteImage from "../../../assets/quote.png";
-import './quote-card.scss'
+import "./quote-card.scss";
 
 const QuoteCardOverlay = styled.div`
   position: absolute;
@@ -22,8 +22,8 @@ const QuoteCardOverlay = styled.div`
 `;
 
 const QuoteCardContainer: any = styled.div`
-  width: ${({width}:any) => width ? width : "280px"};
-  height: ${({height}:any) => height ? height : "280px"};
+  width: ${({ width }: any) => (width ? width : "280px")};
+  height: ${({ height }: any) => (height ? height : "280px")};
   background-color: #fff;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.95),
@@ -44,6 +44,15 @@ const QuoteCardContainer: any = styled.div`
   justify-content: center;
   text-align: center;
 
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   ${({ isModal }: any) =>
     isModal &&
     css`
@@ -54,14 +63,15 @@ const QuoteCardContainer: any = styled.div`
     `}
 
   :hover {
-    ${QuoteCardOverlay} {
+    .quote-overlay {
       opacity: 1;
+      animation-name: fadeIn;
+      animation-duration: 0.9s;
     }
   }
 `;
 
 export const QuoteCard = ({ quoteData, expandHandler, isModal }: any) => {
-
   const expandEvtHandler = () => {
     expandHandler(quoteData);
   };
@@ -83,7 +93,9 @@ export const QuoteCard = ({ quoteData, expandHandler, isModal }: any) => {
       )}
       {!isModal && (
         <div className="quote-overlay">
-          <button className="card-button" onClick={expandEvtHandler}><span>Expand</span></button>
+          <button className="card-button" onClick={expandEvtHandler}>
+            <span>Expand</span>
+          </button>
         </div>
       )}
     </QuoteCardContainer>
