@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/quote-generator-react-styled-scss-storybook-/static/css/main.7f4443c3.css",
+    "main.js": "/quote-generator-react-styled-scss-storybook-/static/js/main.a5816e36.js",
+    "static/js/787.bf514722.chunk.js": "/quote-generator-react-styled-scss-storybook-/static/js/787.bf514722.chunk.js",
+    "static/media/quote.png": "/quote-generator-react-styled-scss-storybook-/static/media/quote.bab5d4845a78f0fa8c32.png",
+    "index.html": "/quote-generator-react-styled-scss-storybook-/index.html",
+    "main.7f4443c3.css.map": "/quote-generator-react-styled-scss-storybook-/static/css/main.7f4443c3.css.map",
+    "main.a5816e36.js.map": "/quote-generator-react-styled-scss-storybook-/static/js/main.a5816e36.js.map",
+    "787.bf514722.chunk.js.map": "/quote-generator-react-styled-scss-storybook-/static/js/787.bf514722.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f4443c3.css",
+    "static/js/main.a5816e36.js"
+  ]
+}
