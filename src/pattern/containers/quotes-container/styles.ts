@@ -12,19 +12,24 @@ export const StyledReactPaginate = styled(ReactPaginate)`
   position: fixed;
   bottom: 20px;
   left: 50%;
-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 50px;
   li {
-    padding: 10px 20px;
+    padding: 10px 18px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 0.4px solid gray;
     cursor: pointer;
-    :hover{
-      color: #035FB7;
+    :hover {
+      color: #035fb7;
     }
   }
   .selected {
-    background-color: #035FB7;
+    background-color: #035fb7;
     color: #fff;
-    :hover{
+    :hover {
       color: #fff;
     }
   }
@@ -35,7 +40,7 @@ transform: translateX(-50%);
     border-radius: 10px 0px 0px 10px;
     cursor: pointer;
     :hover {
-      color: #035FB7;
+      color: #035fb7;
     }
   }
 
@@ -46,7 +51,7 @@ transform: translateX(-50%);
     border-radius: 0 10px 10px 0;
     cursor: pointer;
     :hover {
-      color: #035FB7;
+      color: #035fb7;
     }
   }
 `;

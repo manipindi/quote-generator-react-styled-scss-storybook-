@@ -27,6 +27,7 @@ export const Quotes = () => {
   const [modalCardData, setModalCardData] = useState(null);
 
   const authorParam = searchParams.get("author");
+  const pageParam: any = searchParams.get("page");
 
   let authorString = authorParam ? `page=${page}&author=${authorParam}` : "";
   let pageString = !authorParam ? `page=${page}` : "";
@@ -49,21 +50,34 @@ export const Quotes = () => {
     }
   }, [page]);
 
-  const handlePageClick = (val: any) => {
-    setPage(val.selected + 1);
-  };
+  useEffect(() => {
+    if (pageParam) {
+      setPage(parseInt(pageParam));
+    }
+  }, [pageParam]);
   const expandHandler = (quoteData: any) => {
     setModalCardData(quoteData);
     onOpen();
+  };
+
+  const handlePageClick = (val: any) => {
+    setPage(val.selected + 1);
   };
 
   const closeHanlder = () => {
     onClose();
   };
 
+  console.log(page);
+
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "flex-start",  justifyContent:"flex-start"}}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
+      }}
     >
       {loading ? (
         <NoDataContainer label="Loading...." />
@@ -95,11 +109,12 @@ export const Quotes = () => {
           breakLabel="..."
           nextLabel="next >"
           onPageChange={handlePageClick}
-          pageRangeDisplayed={4}
+          pageRangeDisplayed={3}
           pageCount={parseInt(quotesList?.totalPages)}
           previousLabel="< previous"
           renderOnZeroPageCount={null}
           initialPage={page - 1}
+          forcePage={page - 1}
         />
       )}
     </div>
