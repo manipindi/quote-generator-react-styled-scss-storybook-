@@ -2,7 +2,6 @@
   "name": "quote-generator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://{manipindi}.github.io/{user-panel-next.js-chakra-ui}",
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
     "@emotion/react": "^11.10.6",

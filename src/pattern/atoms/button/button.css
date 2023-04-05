@@ -1,0 +1,15 @@
+.button {
+  padding: 10px 16px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  color: #B8C8D8;
+  font-weight: bold;
+  font-size: 14px;
+}
+.button:hover {
+  background-color: rgb(240, 240, 240);
+  color: #8693a1;
+}
+.button:active {
+  background-color: whitesmoke;
+}/*# sourceMappingURL=button.css.map */
