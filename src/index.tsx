@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,6 +14,7 @@ root.render(
     <ChakraProvider>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Navigate to="/quotes" />} />
           <Route path="/quotes" element={<App />}></Route>
         </Routes>
       </BrowserRouter>
