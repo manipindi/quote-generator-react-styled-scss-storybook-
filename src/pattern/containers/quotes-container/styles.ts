@@ -66,7 +66,7 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     }
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 450px) {
     height: 36px;
     li{
       display: none;
