@@ -56,6 +56,7 @@ const QuoteCardContainer: any = styled.div`
       box-shadow: none;
       @media screen and (min-width: 768px) {
         width: 440px;
+        height: 440px;
         font-size: 20px;
       }
     `}

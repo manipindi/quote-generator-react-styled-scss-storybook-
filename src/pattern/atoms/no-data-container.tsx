@@ -17,6 +17,6 @@ const NoDataWrapper = styled.div`
   z-index: 10;
 `;
 
-export default function NoDataContainer({ label }: any) {
+export default function LoadingOverlay({ label }: any) {
   return <NoDataWrapper>{label ? label : <Button bg={"transparent"} fontSize="4xl" isLoading color={"white"}></Button>}</NoDataWrapper>;
 }

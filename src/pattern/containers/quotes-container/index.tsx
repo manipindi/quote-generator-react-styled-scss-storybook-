@@ -1,24 +1,20 @@
-import { Text, useDisclosure } from "@chakra-ui/react";
-import axios from "axios";
+import { Image, Text, useDisclosure } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
 import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
-import { AxiosInstance } from "../../../utils/axios-istance";
-import { QUOTES_DOMAIN } from "../../../utils/endpoints";
 import { useAxios } from "../../../utils/hooks";
-import NoDataContainer from "../../atoms/no-data-container";
 import { QuoteCard } from "../../molecules/quote-card";
 import ExpandModal from "../../organisms/modal/expand-modal";
 import { StyledReactPaginate } from "./styles";
 import "./quote-container.scss";
+import LoadingOverlay from "../../atoms/no-data-container";
+import NoDataImg from '../../../assets/no-data.png'
 
 const QuotesContainer = styled.div`
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
-  /* justify-content: space-between; */
 
   @media screen and (min-width: 0px) and (max-width: 768px) {
     justify-content: center;
@@ -98,7 +94,7 @@ export const Quotes = () => {
         )}
       
       {loading ? (
-        <NoDataContainer/>
+        <LoadingOverlay/>
       ) : (
         <QuotesContainer>
           {!!quotesList &&
@@ -112,7 +108,10 @@ export const Quotes = () => {
               />
             ))
           ) : (
-            <NoDataContainer label="No Data Found" />
+            <div className="no-data-container">
+              <Image src={NoDataImg} width="300px"/>
+              <Text>No Data Found</Text>
+            </div>
           )}
         </QuotesContainer>
       )}
