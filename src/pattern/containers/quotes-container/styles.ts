@@ -14,8 +14,10 @@ export const StyledReactPaginate = styled(ReactPaginate)`
   left: 50%;
   transform: translateX(-50%);
   height: 50px;
+
   li {
-    padding: 10px 18px;
+    width: 100%;
+    height: 100%;
     width: auto;
     display: flex;
     justify-content: center;
@@ -24,6 +26,15 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     cursor: pointer;
     :hover {
       color: #035fb7;
+    }
+
+    a {
+      width: 100%;
+      height: 100%;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
   .selected {
@@ -52,6 +63,24 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     cursor: pointer;
     :hover {
       color: #035fb7;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    height: 36px;
+    li{
+      display: none;
+      a{
+        padding: 0 10px;
+      }
+    }
+    .next {
+      display: block;
+      width: 60px;
+    }
+    .previous{
+      display: block;
+      width: 60px;
     }
   }
 `;

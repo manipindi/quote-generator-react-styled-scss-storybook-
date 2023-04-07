@@ -1,0 +1,24 @@
+.show-alert {
+  opacity: 1;
+  transition: all 250ms linear;
+}
+
+.close-alert {
+  opacity: 0;
+  transition: all 250ms linear;
+}
+
+.alert {
+  color: rgb(134, 144, 160);
+  z-index: 1;
+  //   background-color: white;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 70px;
+  display: none;
+
+  @media screen and (max-width:400px){
+    display: block;
+  }
+}

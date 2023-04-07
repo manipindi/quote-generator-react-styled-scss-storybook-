@@ -3,24 +3,6 @@ import styled, { css } from "styled-components";
 import QuoteImage from "../../../assets/quote.png";
 import "./quote-card.scss";
 
-const QuoteCardOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.3);
-  /* backdrop-filter: blur(8px) brightness(80%); */
-  transition: all 0.5s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const QuoteCardContainer: any = styled.div`
   width: ${({ width }: any) => (width ? width : "280px")};
   height: ${({ height }: any) => (height ? height : "280px")};
@@ -34,7 +16,12 @@ const QuoteCardContainer: any = styled.div`
   background-position: center;
   background-size: 180px 180px;
   border-radius: 10px;
-  color: #bbc4d3;
+  color: #8690a0;
+  font-family: "Allerta Stencil", sans-serif;
+  box-shadow: rgba(119, 119, 129, 0.25) 0px 6px 12px -2px,
+    rgba(145, 145, 145, 0.3) 0px 3px 7px -3px;
+  margin-bottom: ${({marginBottom}:any)=>marginBottom && marginBottom};
+  z-index: 0;
 
   position: relative;
 
@@ -53,6 +40,12 @@ const QuoteCardContainer: any = styled.div`
     }
   }
 
+  @media screen and (min-width: 0px) and (max-width: 1080px) {
+    width: 340px;
+    height: 340px;
+    font-size: 16px;
+  }
+
   ${({ isModal }: any) =>
     isModal &&
     css`
@@ -60,6 +53,11 @@ const QuoteCardContainer: any = styled.div`
       height: 500px;
       font-size: 25px;
       background-size: 300px 300px;
+      box-shadow: none;
+      @media screen and (min-width: 768px) {
+        width: 440px;
+        font-size: 20px;
+      }
     `}
 
   :hover {
@@ -71,19 +69,19 @@ const QuoteCardContainer: any = styled.div`
   }
 `;
 
-export const QuoteCard = ({ quoteData, expandHandler, isModal }: any) => {
+export const QuoteCard = ({ quoteData, expandHandler, isModal, ...rest }: any) => {
   const expandEvtHandler = () => {
     expandHandler(quoteData);
   };
 
   return (
-    <QuoteCardContainer isModal={isModal}>
+    <QuoteCardContainer {...rest} isModal={isModal}>
       {quoteData && (
         <>
           <Text>{quoteData.content}</Text>
           <Text
             fontWeight={"semibold"}
-            color={"#B8C8D8"}
+            color={"#8690a0"}
             position={"absolute"}
             bottom="20px"
           >

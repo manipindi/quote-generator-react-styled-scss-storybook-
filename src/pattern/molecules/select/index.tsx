@@ -32,6 +32,12 @@ export const Filter = ({
       cursor={"pointer"}
       w={"160px"}
       onChange={optionChangeHandler}
+      // boxShadow={"rgba(119, 119, 129, 0.25) 0px 6px 12px -2px, rgba(145, 145, 145, 0.3) 0px 3px 7px -3px"}
+      width="170px"
+      overflow={"hidden"}
+      textOverflow="ellipsis"
+      whiteSpace={"nowrap"}
+      marginLeft="auto"
     >
       {!!options &&
         !!options.length &&
