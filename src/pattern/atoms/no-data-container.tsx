@@ -15,9 +15,8 @@ const NoDataWrapper = styled.div`
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.48);
   z-index: 10;
-  color: black;
 `;
 
 export default function NoDataContainer({ label }: any) {
-  return <NoDataWrapper><Button isLoading color={"white"}></Button></NoDataWrapper>;
+  return <NoDataWrapper>{label ? label : <Button bg={"transparent"} fontSize="4xl" isLoading color={"white"}></Button>}</NoDataWrapper>;
 }

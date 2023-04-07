@@ -88,8 +88,6 @@ export const Quotes = () => {
     }
   }, [quotesList]);
 
-  console.log(showPageAlert);
-
   return (
     <div>
         {!!quotesList && !!quotesList.totalPages && !!quotesList.page && (
@@ -100,7 +98,7 @@ export const Quotes = () => {
         )}
       
       {loading ? (
-        <NoDataContainer label="Loading...." />
+        <NoDataContainer/>
       ) : (
         <QuotesContainer>
           {!!quotesList &&
